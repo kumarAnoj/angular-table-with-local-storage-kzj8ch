@@ -1,0 +1,17 @@
+<!-- modal.component.html -->
+<table mat-table #table [dataSource]="recs">
+    <ng-container cdkColumnDef="name">
+        <th mat-header-cell *cdkHeaderCellDef> Name </th>
+        <td mat-cell *cdkCellDef="let row"> {{row.name}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="cert">
+        <th mat-header-cell *cdkHeaderCellDef> Certification </th>
+        <td mat-cell *cdkCellDef="let row"> {{row.cert}} </td>
+    </ng-container>
+    <ng-container cdkColumnDef="cgpa">
+        <th mat-header-cell *cdkHeaderCellDef> C/GPA </th>
+        <td mat-cell *cdkCellDef="let row"> {{row.cgpa}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['name', 'cert', 'cgpa']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'cert', 'cgpa'];"></tr>
+</table>
